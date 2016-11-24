@@ -1,0 +1,11 @@
+clc;
+clear all;
+close all;
+a=readtable('hour.csv');
+b=a;
+b(:,[2,3,4,15,16])=[];
+DatosBalanceados=table2array(b);
+%DatosBalanceados = DatosBalanceados((1:1000),:);
+X=DatosBalanceados(:,(1:11));
+Y=DatosBalanceados(:,12);
+save('datos.mat');
